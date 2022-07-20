@@ -1,4 +1,4 @@
-package com.example.springboot.entities;
+package com.example.springboot.data.entities;
 
 import javax.persistence.*;
 import java.sql.Date;

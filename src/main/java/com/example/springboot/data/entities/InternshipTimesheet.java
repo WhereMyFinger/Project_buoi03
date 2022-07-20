@@ -1,17 +1,21 @@
-package com.example.springboot.entities;
+package com.example.springboot.data.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class University {
+public class InternshipTimesheet {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
+    /*@ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Internship internship;*/
+    @Column(insertable = false, updatable = false)
+    private int internship_id;
+    private Date working_day;
+    private String time;
     private boolean is_del_flg;
     private int created_id;
     private Date created_at;
@@ -26,12 +30,36 @@ public class University {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    /*public Internship getInternship() {
+        return internship;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInternship(Internship internship) {
+        this.internship = internship;
+    }*/
+
+    public int getInternship_id() {
+        return internship_id;
+    }
+
+    public void setInternship_id(int internship_id) {
+        this.internship_id = internship_id;
+    }
+
+    public Date getWorking_day() {
+        return working_day;
+    }
+
+    public void setWorking_day(Date working_day) {
+        this.working_day = working_day;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public boolean isIs_del_flg() {

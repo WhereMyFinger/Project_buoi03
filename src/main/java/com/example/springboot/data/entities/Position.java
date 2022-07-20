@@ -1,21 +1,15 @@
-package com.example.springboot.entities;
+package com.example.springboot.data.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class InternshipTimesheet {
+public class Position {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    /*@ManyToOne(optional = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private Internship internship;*/
-    @Column(insertable = false, updatable = false)
-    private int internship_id;
-    private Date working_day;
-    private String time;
+    private String name;
     private boolean is_del_flg;
     private int created_id;
     private Date created_at;
@@ -30,36 +24,12 @@ public class InternshipTimesheet {
         this.id = id;
     }
 
-    /*public Internship getInternship() {
-        return internship;
+    public String getName() {
+        return name;
     }
 
-    public void setInternship(Internship internship) {
-        this.internship = internship;
-    }*/
-
-    public int getInternship_id() {
-        return internship_id;
-    }
-
-    public void setInternship_id(int internship_id) {
-        this.internship_id = internship_id;
-    }
-
-    public Date getWorking_day() {
-        return working_day;
-    }
-
-    public void setWorking_day(Date working_day) {
-        this.working_day = working_day;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isIs_del_flg() {

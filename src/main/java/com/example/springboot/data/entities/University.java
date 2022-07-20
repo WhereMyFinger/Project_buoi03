@@ -1,11 +1,13 @@
-package com.example.springboot.entities;
+package com.example.springboot.data.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Position {
+public class University {
 
     @Id
     private int id;

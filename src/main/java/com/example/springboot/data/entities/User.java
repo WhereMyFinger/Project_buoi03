@@ -1,4 +1,4 @@
-package com.example.springboot.entities;
+package com.example.springboot.data.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +15,6 @@ public class User {
     private String fullname;
     private String phone_number;
     private String skype;
-    private int role;
     private boolean is_del_flg;
     private int created_id;
     private Date created_at;
@@ -76,14 +75,6 @@ public class User {
 
     public void setSkype(String skype) {
         this.skype = skype;
-    }
-
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
     }
 
     public boolean isIs_del_flg() {
