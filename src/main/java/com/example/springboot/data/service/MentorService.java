@@ -22,8 +22,8 @@ public class MentorService {
         return mentorRepository.findById(id).get();
     }
 
-    public Page<Mentor> getAllMentor(Pageable pageable) {
-        return mentorRepository.findAll(pageable);
+    public Page<Mentor> getAllMentor(Pageable pageable, boolean is_active) {
+        return mentorRepository.findAllByIs_active(pageable, is_active);
     }
 
     public void deleteMentor(int id) {

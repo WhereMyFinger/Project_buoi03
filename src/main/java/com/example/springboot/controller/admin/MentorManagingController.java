@@ -41,8 +41,8 @@ public class MentorManagingController {
         }
         Pageable pageable = PageRequest.of(page, size, sortable);
 
-        model.addAttribute("user", userService.findUsersByRole(pageable, 2));
-        model.addAttribute("mentor", mentorService.getAllMentor(pageable));
+        model.addAttribute("user", userService.findUsersByRole(pageable, 2, false));
+        model.addAttribute("mentor", mentorService.getAllMentor(pageable, true));
         return "";
     }
 
@@ -85,9 +85,7 @@ public class MentorManagingController {
 
     @DeleteMapping("/delete_mentor")
     public String deleteMentor(int id) {
-        Mentor mentor = mentorService.getMentorById(id);
-        mentor.setIs_active(false);
-        mentorService.saveMentor(mentor);
+        mentorService.deleteMentor(id);
         return "success";
     }
 }

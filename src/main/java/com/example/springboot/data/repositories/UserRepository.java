@@ -16,5 +16,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     Iterable<User> findByEmail(@Param("email") String email);
 
-    Page<User> findUsersByRole(Pageable pageable, @Param("role") int role);
+    Page<User> findUsersByRoleAndAndIs_del_flg(Pageable pageable, @Param("role") int role, @Param("is_del_flg") boolean is_del_flg);
 }

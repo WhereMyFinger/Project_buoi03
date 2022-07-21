@@ -28,8 +28,8 @@ public class UserService {
         return userRepository.findById(id).get();
     }
 
-    public Page<User> findUsersByRole(Pageable pageable, int role) {
-        return userRepository.findUsersByRole(pageable, role);
+    public Page<User> findUsersByRole(Pageable pageable, int role, boolean is_del_flg) {
+        return userRepository.findUsersByRoleAndAndIs_del_flg(pageable, role, is_del_flg);
     }
 
     public User findUserByEmail(String email) {
@@ -63,7 +63,6 @@ public class UserService {
             return (listUserRoles.stream().filter(userRole -> userRole.getRoleId() == role.getId()).findFirst().orElse(null) != null);
         }).collect(Collectors.toList());
     }
-*/
 
     public String addNewUser(User user) {
         logger.info("Start registerNewUser");
@@ -100,7 +99,7 @@ public class UserService {
             logger.error(e.getMessage());
         }
         return false;
-    }
+    }*/
 
     public void saveUser(User user) {
         userRepository.save(user);
