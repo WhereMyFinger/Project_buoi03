@@ -1,6 +1,5 @@
 package com.example.springboot.authen;
 
-import com.example.springboot.data.entities.Role;
 import com.example.springboot.data.entities.User;
 import com.example.springboot.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

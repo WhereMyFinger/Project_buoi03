@@ -16,6 +16,7 @@ public class User {
     private String phone_number;
     private String skype;
     private boolean is_del_flg;
+    private int role;
     private int created_id;
     private Date created_at;
     private int modified_id;
@@ -83,6 +84,14 @@ public class User {
 
     public void setIs_del_flg(boolean is_del_flg) {
         this.is_del_flg = is_del_flg;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 
     public int getCreated_id() {
