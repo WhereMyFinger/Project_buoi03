@@ -68,9 +68,9 @@ public class InternshipManagingController {
     }*/
 
     @GetMapping("/add_internship_form")
-    public String showAddMentorForm(int id) {
-        Internship internship = internshipService.getInternshipById(id);
-        User user = userService.findUserById(id);
+    public String showAddMentorForm(Model model, Internship internship, User user) {
+        model.addAttribute("user", user);
+        model.addAttribute("intership", internship);
         return "add-intership-form";
     }
 

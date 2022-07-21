@@ -108,6 +108,7 @@ public class UserService {
     public void deleteUser(int id) {
         User user = userRepository.findById(id).get();
         user.setIs_del_flg(true);
+        user.setModified_at(new Date());
         userRepository.save(user);
     }
 }

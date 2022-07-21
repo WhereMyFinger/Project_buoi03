@@ -47,9 +47,9 @@ public class MentorManagingController {
     }
 
     @GetMapping("/add_mentor_form")
-    public String showAddMentorForm(int id) {
-        Mentor mentor = mentorService.getMentorById(id);
-        User user = userService.findUserById(id);
+    public String showAddMentorForm(Model model, Mentor mentor, User user) {
+        model.addAttribute("user", user);
+        model.addAttribute("mentor", mentor);
         return "add-mentor-form";
     }
 
